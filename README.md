@@ -38,8 +38,8 @@ How does someone use this application? Tell a user story here.
 
 ## Built With
 
-React Native
-Expo Go
+- React Native
+- Expo Go
 
 ## Acknowledgement
 
