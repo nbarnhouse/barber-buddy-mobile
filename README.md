@@ -1,6 +1,4 @@
-# PROJECT NAME
-
-Barber Buddy (Mobile)
+# Barber Buddy (Mobile)
 
 ## Description
 
