@@ -24,7 +24,7 @@ Barber Buddy takes the stress out of your salon visit by providing personalized 
 
 ## File Structure
 
-- `app/` contains the visual app files
+- `app/` contains the visual and navigation app files
 - `assets/` contains app images, icons, and other media
 - `components/` contains reusable code snippets of common elements
 
