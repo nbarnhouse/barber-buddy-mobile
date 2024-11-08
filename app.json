@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "barber-buddy-mobile",
+    "slug": "barber-buddy-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/barber_logo.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+
+    // "entryPoint": ".screens/HOmeScreen.js",
+
+    "splash": {
+      "image": "./assets/images/scissor_image.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0d2124"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/scissor_image.png",
+        "backgroundColor": "#0d2124"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.ico"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
