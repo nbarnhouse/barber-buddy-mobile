@@ -1,8 +1,17 @@
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, ActivityIndicator } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 const logoImg = require('../assets/images/barber_logo.png');
+import { useFonts } from 'expo-font';
 
 export default function Index() {
+  const [fontsLoaded] = useFonts({
+    interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <ActivityIndicator size="large" color="#f5722a" />;
+  }
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container} edges={['none']}>
@@ -22,12 +31,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
+    marginTop: 100,
     height: 366,
     width: 366,
   },
   text: {
     color: '#f5722a',
     marginBottom: 200,
-    fontSize: 80,
+    fontSize: 38.63,
+    fontWeight: 900,
+    fontFamily: 'interFont',
   },
 });

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import { View, Text, Button, TextInput, Image, StyleSheet } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function Login() {
   const logoImg = require('../assets/images/barber_logo.png');
 
   const [username, onChangeUsername] = React.useState('');
-  const [password, onChangePassword] = React.useState('Password');
+  const [password, onChangePassword] = React.useState('');
 
   return (
     <SafeAreaProvider>
@@ -17,7 +17,7 @@ export default function Login() {
           <TextInput
             style={styles.input}
             onChangeText={onChangeUsername}
-            value={text}
+            value={username}
             placeholder={'Username'}
           />
           <TextInput
@@ -56,5 +56,11 @@ const styles = StyleSheet.create({
     color: '#f5722a',
     fontSize: 25,
   },
-  input: { height: 40, margin: 12, borderWidth: 1, backgroundColor: '#ffd991' },
+  input: {
+    height: 40,
+    width: 150,
+    margin: 12,
+    borderWidth: 1,
+    backgroundColor: '#ffd991',
+  },
 });
