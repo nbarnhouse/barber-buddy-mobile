@@ -2,15 +2,25 @@ import { Text, View, Image, StyleSheet, ActivityIndicator } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 const logoImg = require('../assets/images/barber_logo.png');
 import { useFonts } from 'expo-font';
+import { Link, useRouter } from 'expo-router';
 
 export default function Index() {
   const [fontsLoaded] = useFonts({
     interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
   });
 
+  const router = useRouter();
+
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" color="#f5722a" />;
   }
+
+  {
+    /* Link component for navigation */
+  }
+  <Link href="/login" style={styles.text}>
+    Go to Login
+  </Link>;
 
   return (
     <SafeAreaProvider>
