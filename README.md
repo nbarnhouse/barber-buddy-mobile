@@ -21,6 +21,7 @@ Barber Buddy takes the stress out of your salon visit by providing personalized 
 - brew install node
 - brew install watchman
 - npx expo-doctor
+- npm install expo-font
 
 ## File Structure
 

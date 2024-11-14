@@ -5,8 +5,18 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 export default function Login() {
   const logoImg = require('../assets/images/barber_logo.png');
 
-  const [username, onChangeUsername] = React.useState('');
-  const [password, onChangePassword] = React.useState('');
+  const [username, onEnterUsername] = React.useState('');
+  const [password, onEnterPassword] = React.useState('');
+
+  const handleTextInput = (input) => {
+    onEnterUsername(input);
+    console.log(input);
+  };
+
+  const handlePassInput = (input) => {
+    onEnterPassword(input);
+    console.log(input);
+  };
 
   return (
     <SafeAreaProvider>
@@ -16,13 +26,13 @@ export default function Login() {
           <Text style={(styles.text, styles.title)}>Barber Buddy</Text>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeUsername}
+            onChangeText={handleTextInput}
             value={username}
             placeholder={'Username'}
           />
           <TextInput
             style={styles.input}
-            onChangeText={onChangePassword}
+            onChangeText={handlePassInput}
             value={password}
             placeholder={'Password'}
           />
