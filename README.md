@@ -22,12 +22,16 @@ Barber Buddy takes the stress out of your salon visit by providing personalized 
 - brew install watchman
 - npx expo-doctor
 - npm install expo-font
+- npm install @react-native-async-storage/async-storage
 
 ## File Structure
 
 - `app/` contains the visual and navigation app files
 - `assets/` contains app images, icons, and other media
 - `components/` contains reusable code snippets of common elements
+- `constants/` contains app-wide constants
+- `hooks/` contains custom React hooks to encapsulate reusable logic
+- `scripts/` contains utility scripts or helper functions
 
 How does someone use this application? Tell a user story here.
 
