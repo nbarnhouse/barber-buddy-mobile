@@ -90,10 +90,11 @@ const styles = StyleSheet.create({
   },
   font: { color: '#FFFFFF', fontSize: 20.8, fontWeight: 400 },
   title: {
-    fontSize: 47,
-    color: '#f5722a',
+    fontSize: 38.63,
+    color: '#ffd890',
     fontFamily: 'interFont',
     fontWeight: 900,
+    lineHeight: 46.75,
   },
   image: {
     height: 366,
@@ -102,6 +103,7 @@ const styles = StyleSheet.create({
 
   input: {
     height: 42,
+    paddingLeft: 15,
     width: 296,
     // margin: 1,
     backgroundColor: '#ffd991',
