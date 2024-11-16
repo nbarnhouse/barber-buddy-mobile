@@ -1,33 +1,36 @@
-import { Text, View, Image, StyleSheet, ActivityIndicator } from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  Button,
+  ActivityIndicator,
+} from 'react-native';
+import { useState } from 'react';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 const logoImg = require('../assets/images/barber_logo.png');
 import { useFonts } from 'expo-font';
 import { Link, useRouter } from 'expo-router';
+import SubmitButton from '@/components/SubmitButton';
 
 export default function Index() {
   const [fontsLoaded] = useFonts({
     interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
   });
-
   const router = useRouter();
 
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" color="#f5722a" />;
   }
 
-  {
-    /* Link component for navigation */
-  }
-  <Link href="/login" style={styles.text}>
-    Go to Login
-  </Link>;
-
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container} edges={['none']}>
         <Image source={logoImg} style={styles.image} />
-
         <Text style={styles.text}>Barber Buddy</Text>
+        <View style={{ width: 172, height: 42 }}>
+          <SubmitButton />
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
