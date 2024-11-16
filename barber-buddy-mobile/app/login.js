@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Button, TextInput, Image, StyleSheet } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
+import SubmitButton from '@/components/SubmitButton';
+
 export default function Login() {
   const logoImg = require('../assets/images/barber_logo.png');
 
@@ -37,11 +39,7 @@ export default function Login() {
             placeholder={'Password'}
           />
 
-          <Button
-            style={styles.button_text}
-            title="Submit"
-            onPress={() => console.log('Submit button pressed')}
-          />
+          <SubmitButton />
           <Button
             style={styles.text}
             title="New User"
