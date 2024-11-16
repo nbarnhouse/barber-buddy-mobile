@@ -37,8 +37,16 @@ export default function Login() {
             placeholder={'Password'}
           />
 
-          <Button style={styles.button_text} title="Submit" />
-          <Button style={styles.text} title="New User" />
+          <Button
+            style={styles.button_text}
+            title="Submit"
+            onPress={() => console.log('Submit button pressed')}
+          />
+          <Button
+            style={styles.text}
+            title="New User"
+            onPress={() => console.log('New User Link clicked')}
+          />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
