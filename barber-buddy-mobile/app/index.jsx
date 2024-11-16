@@ -12,12 +12,14 @@ const logoImg = require('../assets/images/barber_logo.png');
 import { useFonts } from 'expo-font';
 import { Link, useRouter } from 'expo-router';
 import SubmitButton from '@/components/SubmitButton';
+import Login from './login';
 
 export default function Index() {
+  const router = useRouter();
+
   const [fontsLoaded] = useFonts({
     interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
   });
-  const router = useRouter();
 
   if (!fontsLoaded) {
     return <ActivityIndicator size="large" color="#f5722a" />;
@@ -31,6 +33,7 @@ export default function Index() {
         <View style={{ width: 172, height: 42 }}>
           <SubmitButton />
         </View>
+        <Button title="Go to Login" onPress={() => router.push('/login')} />
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -40,17 +43,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#0d2124',
-    justifyContent: 'space-around',
+    // justifyContent: 'space-evenly',
     alignItems: 'center',
   },
   image: {
-    marginTop: 100,
+    // marginTop: 100,
     height: 366,
     width: 366,
   },
   text: {
     color: '#f5722a',
-    marginBottom: 200,
+    // marginBottom: 200,
     fontSize: 38.63,
     fontWeight: 900,
     fontFamily: 'interFont',
