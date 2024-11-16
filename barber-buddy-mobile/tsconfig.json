@@ -11,7 +11,8 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "app/login.jsx",
-    "app/index.jsx"
+    "app/login.js",
+    "app/index.js",
+    "components/SubmitButton.js"
   ]
 }

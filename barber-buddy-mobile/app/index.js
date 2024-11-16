@@ -6,16 +6,14 @@ import {
   Button,
   ActivityIndicator,
 } from 'react-native';
-import { useState } from 'react';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
-const logoImg = require('../assets/images/barber_logo.png');
 import { useFonts } from 'expo-font';
-import { Link, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import SubmitButton from '@/components/SubmitButton';
-import Login from './login';
 
 export default function Index() {
   const router = useRouter();
+  const logoImg = require('../assets/images/barber_logo.png');
 
   const [fontsLoaded] = useFonts({
     interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
@@ -30,10 +28,10 @@ export default function Index() {
       <SafeAreaView style={styles.container} edges={['none']}>
         <Image source={logoImg} style={styles.image} />
         <Text style={styles.text}>Barber Buddy</Text>
-        <View style={{ width: 172, height: 42 }}>
-          <SubmitButton />
-        </View>
+
         <Button title="Go to Login" onPress={() => router.push('/login')} />
+        <Button title="Go to Home" onPress={() => router.push('/home')} />
+        <Button title="Go to Signup" onPress={() => router.push('/signup')} />
       </SafeAreaView>
     </SafeAreaProvider>
   );

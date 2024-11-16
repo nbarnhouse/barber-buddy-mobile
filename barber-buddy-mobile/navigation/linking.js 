@@ -1,0 +1,13 @@
+const linking = {
+  prefixes: ['myapp://', 'https://myapp.com'],
+  config: {
+    screens: {
+      Home: '/',
+      Profile: '/profile',
+      Settings: '/settings',
+      Login: '/auth/login',
+    },
+  },
+};
+
+export default linking;
