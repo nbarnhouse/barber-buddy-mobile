@@ -27,7 +27,7 @@ export default function Index() {
     <SafeAreaProvider>
       <SafeAreaView style={styles.container} edges={['none']}>
         <Image source={logoImg} style={styles.image} />
-        <Text style={styles.text}>Barber Buddy</Text>
+        <Text style={styles.title}>Barber Buddy</Text>
 
         <Button title="Go to Login" onPress={() => router.push('/login')} />
         <Button title="Go to Home" onPress={() => router.push('/home')} />
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     height: 366,
     width: 366,
   },
-  text: {
+  title: {
     color: '#ffd890',
     // marginBottom: 200,
     fontSize: 38.63,
