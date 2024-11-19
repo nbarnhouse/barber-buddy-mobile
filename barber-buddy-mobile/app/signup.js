@@ -5,11 +5,12 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  Button,
-  Platform,
+  TouchableOpacity,
 } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import { Shadow } from 'react-native-shadow-2';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Register() {
   const logoImg = require('../assets/images/barber_logo.png');
@@ -18,20 +19,41 @@ export default function Register() {
   });
 
   return (
-    <View style={styles.container}>
-      <Image source={logoImg} style={styles.logo}></Image>
-      <Text style={styles.title}>Barber Buddy</Text>
-      <Text style={styles.text}>Create an Account</Text>
-      <Shadow radius={5}>
-        <View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Image source={logoImg} style={styles.logo}></Image>
+        <Text style={styles.title}>Barber Buddy</Text>
+        <Text style={[styles.text, { textDecorationLine: 'underline' }]}>
+          Create an Account
+        </Text>
+
+        <Shadow radius={5}>
           <TextInput style={styles.input} placeholder={'e-mail'}></TextInput>
+        </Shadow>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+          }}
+        >
+          <TouchableOpacity
+            style={[{ backgroundColor: '#b97f60' }, styles.button]}
+          >
+            <LinearGradient
+              colors={['#ffffff', 'transparent']}
+              style={styles.background}
+            >
+              {/* <Text style={styles.text}>Back</Text> */}
+            </LinearGradient>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[{ backgroundColor: '#f27732' }, styles.button]}
+          >
+            <Text style={styles.text}> Next</Text>
+          </TouchableOpacity>
         </View>
-      </Shadow>
-      <View style={{ flexDirection: 'row' }}>
-        <Button style={styles.button} title="Back" />
-        <Button style={styles.button} title="Next" />
-      </View>
-    </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -39,13 +61,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: '#0d2124',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
 
   text: {
     color: 'white',
-    textDecorationLine: 'underline',
     fontSize: 20.8,
     fontWeight: 400,
   },
@@ -63,31 +84,25 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     width: 296,
     height: 42,
     borderRadius: 10,
     paddingLeft: 10,
-    overflow: 'hidden',
   },
 
   button: {
     width: 124,
     height: 42,
     borderRadius: 10,
+    marginHorizontal: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-
-  // shadow: {
-  //   ...Platform.select({
-  //     ios: {
-  //       shadowColor: 'black',
-  //       shadowOffset: { width: 0, height: -4 },
-  //       shadowOpacity: 0.2,
-  //       shadowRadius: 4,
-  //     },
-  //     android: {
-  //       elevation: 5,
-  //     },
-  //   }),
-  // },
 });
+
+// style={[ NEXT COLOR
+//   { backgroundColor: '#f27732' },
+//   styles.text,
+//   styles.button,
+// ]}
