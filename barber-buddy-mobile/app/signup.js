@@ -1,6 +1,15 @@
 import { useRouter } from 'expo-router';
-import { View, Text, StyleSheet, Image, TextInput, Button } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  Button,
+  Platform,
+} from 'react-native';
 import { useFonts } from 'expo-font';
+import { Shadow } from 'react-native-shadow-2';
 
 export default function Register() {
   const logoImg = require('../assets/images/barber_logo.png');
@@ -13,7 +22,11 @@ export default function Register() {
       <Image source={logoImg} style={styles.logo}></Image>
       <Text style={styles.title}>Barber Buddy</Text>
       <Text style={styles.text}>Create an Account</Text>
-      <TextInput style={styles.input} placeholder={'e-mail'}></TextInput>
+      <Shadow radius={5}>
+        <View>
+          <TextInput style={styles.input} placeholder={'e-mail'}></TextInput>
+        </View>
+      </Shadow>
       <View style={{ flexDirection: 'row' }}>
         <Button style={styles.button} title="Back" />
         <Button style={styles.button} title="Next" />
@@ -25,7 +38,7 @@ export default function Register() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0d2124',
+    // backgroundColor: '#0d2124',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -43,17 +56,19 @@ const styles = StyleSheet.create({
     fontWeight: 900,
     fontFamily: 'interFont',
   },
+
   logo: {
     height: 250,
     width: 250,
   },
 
   input: {
-    backgroundColor: 'yellow',
+    backgroundColor: 'red',
     width: 296,
     height: 42,
     borderRadius: 10,
     paddingLeft: 10,
+    overflow: 'hidden',
   },
 
   button: {
@@ -61,4 +76,18 @@ const styles = StyleSheet.create({
     height: 42,
     borderRadius: 10,
   },
+
+  // shadow: {
+  //   ...Platform.select({
+  //     ios: {
+  //       shadowColor: 'black',
+  //       shadowOffset: { width: 0, height: -4 },
+  //       shadowOpacity: 0.2,
+  //       shadowRadius: 4,
+  //     },
+  //     android: {
+  //       elevation: 5,
+  //     },
+  //   }),
+  // },
 });
