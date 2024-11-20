@@ -13,6 +13,7 @@ import { useRouter } from 'expo-router';
 import { useFonts } from 'expo-font';
 
 import SubmitButton from '@/components/SubmitButton';
+import globalStyles from '../components/globalStyles';
 
 export default function Login() {
   const router = useRouter();
@@ -46,7 +47,7 @@ export default function Login() {
       <SafeAreaView style={styles.container} edges={['none']}>
         <Image source={logoImg} style={styles.image} />
 
-        <Text style={[styles.font, styles.title]}>Barber Buddy</Text>
+        <Text style={[styles.font, globalStyles.title]}>Barber Buddy</Text>
 
         <TextInput
           style={styles.input}
@@ -62,7 +63,7 @@ export default function Login() {
           secureTextEntry // Mask the password text
         />
 
-        <SubmitButton onPress={handleSubmit} />
+        <SubmitButton />
 
         <TouchableOpacity onPress={() => router.push('/signup')}>
           <Text
@@ -88,14 +89,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
-  font: { color: '#FFFFFF', fontSize: 20.8, fontWeight: 400 },
-  title: {
-    fontSize: 38.63,
-    color: '#ffd890',
-    fontFamily: 'interFont',
-    fontWeight: 900,
-    lineHeight: 46.75,
-  },
+  font: { color: '#FFFFFF', fontSize: 18, fontWeight: 400 },
+
   image: {
     height: 366,
     width: 366,
@@ -106,7 +101,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     width: 296,
     // margin: 1,
-    backgroundColor: '#ffd991',
+    backgroundColor: '#FBE1B2',
     borderRadius: 10,
   },
 });

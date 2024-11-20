@@ -11,7 +11,7 @@ export default function SubmitButton({ onPress }) {
 
 const styles = StyleSheet.create({
   shape: {
-    backgroundColor: '#f5722a',
+    backgroundColor: '#F77127',
     width: 172,
     height: 42,
     justifyContent: 'center',
@@ -21,5 +21,6 @@ const styles = StyleSheet.create({
   font: {
     fontSize: 20.8,
     color: '#FFFFFF',
+    fontWeight: 400,
   },
 });
