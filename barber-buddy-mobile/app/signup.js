@@ -12,45 +12,59 @@ import { useFonts } from 'expo-font';
 import { Shadow } from 'react-native-shadow-2';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import globalStyles from '../components/globalStyles';
+
 export default function Register() {
   const logoImg = require('../assets/images/barber_logo.png');
   const [fontsLoaded] = useFonts({
     interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
   });
 
+  if (!fontsLoaded) {
+    return (
+      <View>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <Image source={logoImg} style={styles.logo}></Image>
-        <Text style={styles.title}>Barber Buddy</Text>
-        <Text style={[styles.text, { textDecorationLine: 'underline' }]}>
-          Create an Account
-        </Text>
+        <Text style={globalStyles.title}>Barber Buddy</Text>
 
-        <Shadow radius={5}>
-          <TextInput style={styles.input} placeholder={'e-mail'}></TextInput>
-        </Shadow>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-          }}
-        >
-          <TouchableOpacity
-            style={[{ backgroundColor: '#b97f60' }, styles.button]}
+        <Text style={[styles.text, styles.link]}>Create an Account</Text>
+
+        <TextInput
+          style={styles.input_shape}
+          placeholder={'e-mail'}
+        ></TextInput>
+        <View style={{ flexDirection: 'row', padding: 10 }}>
+          <LinearGradient
+            colors={['#ffffff', '#b97f60']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0, y: 1 }}
+            style={styles.button_gradient}
           >
-            <LinearGradient
-              colors={['#ffffff', 'transparent']}
-              style={styles.background}
+            <TouchableOpacity style={[styles.button_shape]}>
+              <Text style={styles.text}>Back</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+
+          <LinearGradient
+            colors={['#ffffff', '#f77121']}
+            start={{ x: 0, y: 0.5 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.button_gradient}
+          >
+            <TouchableOpacity
+              style={[styles.button_shape]}
+              // onPress={() => router.push('')}
             >
-              {/* <Text style={styles.text}>Back</Text> */}
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[{ backgroundColor: '#f27732' }, styles.button]}
-          >
-            <Text style={styles.text}> Next</Text>
-          </TouchableOpacity>
+              <Text style={styles.text}>Next</Text>
+            </TouchableOpacity>
+          </LinearGradient>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -66,16 +80,9 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: 'white',
+    color: '#FFFFFF',
     fontSize: 20.8,
     fontWeight: 400,
-  },
-
-  title: {
-    color: '#ffd890',
-    fontSize: 38.63,
-    fontWeight: 900,
-    fontFamily: 'interFont',
   },
 
   logo: {
@@ -83,26 +90,27 @@ const styles = StyleSheet.create({
     width: 250,
   },
 
-  input: {
-    backgroundColor: 'white',
+  input_shape: {
+    backgroundColor: 'yellow',
     width: 296,
     height: 42,
     borderRadius: 10,
     paddingLeft: 10,
   },
 
-  button: {
+  button_shape: {
     width: 124,
     height: 42,
-    borderRadius: 10,
-    marginHorizontal: 15,
     justifyContent: 'center',
     alignItems: 'center',
   },
-});
 
-// style={[ NEXT COLOR
-//   { backgroundColor: '#f27732' },
-//   styles.text,
-//   styles.button,
-// ]}
+  button_gradient: {
+    borderRadius: 10,
+    marginHorizontal: 15,
+  },
+
+  link: {
+    textDecorationLine: 'underline',
+  },
+});
