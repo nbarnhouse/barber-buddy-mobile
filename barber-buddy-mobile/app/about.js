@@ -30,7 +30,7 @@ export default function About() {
         <View>
           <Image source={logoImg} style={styles.logo}></Image>
           <Text style={globalStyles.title}>Barber Buddy</Text>
-          <Text style={styles.font}>
+          <Text style={[globalStyles.text, styles.text]}>
             Getting a haircut can feel like entering uncharted territory.
             Questions flood your mind: What style suits me? How do I explain it
             to my barber? Will I end up with a haircut I hate? These
@@ -61,10 +61,6 @@ const styles = StyleSheet.create({
     width: 140,
   },
   text: {
-    size: 20,
-    color: '#FED992',
-    weight: 900,
     justifyContent: 'flex-start',
-    fontFamily: 'interFont',
   },
 });
