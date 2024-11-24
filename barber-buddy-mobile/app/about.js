@@ -2,10 +2,11 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
-  SafeAreaProvider,
   Button,
+  Image,
+  ActivityIndicator,
 } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { useRouter } from 'expo-router';
 import { useFonts } from 'expo-font';
@@ -20,14 +21,10 @@ export default function About() {
     interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
   });
 
-  if (!fontsLoaded) {
-    return <ActivityIndicator size="large" color="#f5722a" />;
-  }
-
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        <View>
+        <View style={styles.container}>
           <Image source={logoImg} style={styles.logo}></Image>
           <Text style={globalStyles.title}>Barber Buddy</Text>
           <Text style={[globalStyles.text, styles.text]}>
@@ -53,6 +50,7 @@ export default function About() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#0d2124',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -62,5 +60,6 @@ const styles = StyleSheet.create({
   },
   text: {
     justifyContent: 'flex-start',
+    margin: 20,
   },
 });
