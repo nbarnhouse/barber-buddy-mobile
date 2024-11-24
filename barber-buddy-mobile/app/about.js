@@ -7,15 +7,23 @@ import {
   Button,
 } from 'react-native';
 
+import { useRouter } from 'expo-router';
+import { useFonts } from 'expo-font';
+
 import globalStyles from '../components/globalStyles';
 
-const logoImg = require('../assets/images/barber_logo.png');
-
-const [fontsLoaded] = useFonts({
-  interfont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
-});
-
 export default function About() {
+  const router = useRouter();
+  const logoImg = require('../assets/images/barber_logo.png');
+
+  const [fontsLoaded] = useFonts({
+    interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <ActivityIndicator size="large" color="#f5722a" />;
+  }
+
   return (
     <SafeAreaProvider>
       <SafeAreaView>
@@ -35,7 +43,7 @@ export default function About() {
             designed to empower you with the knowledge and confidence you need
             to step into any barbershop with ease.
           </Text>
-          <Button title={'Start'} />
+          <Button title={'Start'} onPress={() => router.push('/login')} />
         </View>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -57,5 +65,6 @@ const styles = StyleSheet.create({
     color: '#FED992',
     weight: 900,
     justifyContent: 'flex-start',
+    fontFamily: 'interFont',
   },
 });
