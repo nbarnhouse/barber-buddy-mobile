@@ -8,6 +8,13 @@ const globalStyles = StyleSheet.create({
     fontWeight: 900,
     lineHeight: 46.75,
   },
+
+  text: {
+    fontSize: 20,
+    fontFamily: 'interFont',
+    color: '#FED992',
+    weight: 900,
+  },
 });
 
 export default globalStyles;
