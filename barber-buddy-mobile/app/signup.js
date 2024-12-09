@@ -6,10 +6,10 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  BoxShadow,
 } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
-import { Shadow } from 'react-native-shadow-2';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import globalStyles from '../components/globalStyles';
@@ -36,10 +36,8 @@ export default function Register() {
 
         <Text style={[styles.text, styles.link]}>Create an Account</Text>
 
-        <TextInput
-          style={styles.input_shape}
-          placeholder={'e-mail'}
-        ></TextInput>
+        <TextInput style={styles.input} placeholder={'e-mail'}></TextInput>
+
         <View style={{ flexDirection: 'row', padding: 10 }}>
           <LinearGradient
             colors={['#ffffff', '#b97f60']}
@@ -74,7 +72,7 @@ export default function Register() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#0d2124',
+    backgroundColor: '#0d2124',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
@@ -90,12 +88,13 @@ const styles = StyleSheet.create({
     width: 250,
   },
 
-  input_shape: {
-    backgroundColor: 'yellow',
+  input: {
     width: 296,
     height: 42,
+    padding: 10,
+    fontSize: 20.8,
     borderRadius: 10,
-    paddingLeft: 10,
+    backgroundColor: '#D9D9D9',
   },
 
   button_shape: {
