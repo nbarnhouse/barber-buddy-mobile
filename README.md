@@ -24,7 +24,6 @@ Barber Buddy takes the stress out of your salon visit by providing personalized 
 - expo-font
 - @react-native-async-storage/async-storage
 - expo-linear-gradient
-- react-native-shadow-2
 
 ## File Structure
 
