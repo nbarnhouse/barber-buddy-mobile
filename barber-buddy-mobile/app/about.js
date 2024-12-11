@@ -1,3 +1,5 @@
+
+
 import {
   View,
   Text,
@@ -6,12 +8,14 @@ import {
   Image,
   ActivityIndicator,
 } from 'react-native';
+
 // import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { useRouter } from 'expo-router';
 import { useFonts } from 'expo-font';
 
 import globalStyles from '../components/globalStyles';
+import NonGradientButton from '../components/NonGradientButton';
 
 export default function About() {
   const router = useRouter();
@@ -38,8 +42,14 @@ export default function About() {
         empower you with the knowledge and confidence you need to step into any
         barbershop with ease.
       </Text>
-      <Button title={'Start'} onPress={() => router.push('/login')} />
-    </View>
+
+      <NonGradientButton
+        label="Start"
+        height={42}
+        width={124}
+        onPress={() => router.push('/login')}
+      />
+
   );
 }
 

@@ -4,12 +4,13 @@ import {
   Image,
   StyleSheet,
   Button,
+  Alert,
   ActivityIndicator,
 } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import { useRouter } from 'expo-router';
-import SubmitButton from '@/components/SubmitButton';
+import NonGradientButton from '@/components/NonGradientButton';
 
 export default function Index() {
   const router = useRouter();
@@ -32,6 +33,11 @@ export default function Index() {
         <Button title="Go to Login" onPress={() => router.push('/login')} />
         <Button title="Go to Home" onPress={() => router.push('/home')} />
         <Button title="Go to Signup" onPress={() => router.push('/signup')} />
+        <Button title="Go to About" onPress={() => router.push('/about')} />
+        <Button
+          title="test alert"
+          onPress={() => Alert.alert('Alert Button Pushed')}
+        />
       </SafeAreaView>
     </SafeAreaProvider>
   );

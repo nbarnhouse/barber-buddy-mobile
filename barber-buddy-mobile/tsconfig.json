@@ -13,6 +13,7 @@
     "expo-env.d.ts",
     "app/login.js",
     "app/index.js",
-    "components/SubmitButton.js"
+    "components/SubmitButton.js",
+    "components/MenuTitle.js"
   ]
 }
