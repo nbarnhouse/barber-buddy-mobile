@@ -7,12 +7,13 @@ import {
   StyleSheet,
   TouchableOpacity,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { useFonts } from 'expo-font';
 
-import SubmitButton from '@/components/SubmitButton';
+import NonGradientButton from '../components/NonGradientButton.js';
 import globalStyles from '../components/globalStyles';
 
 export default function Login() {
@@ -63,7 +64,12 @@ export default function Login() {
           secureTextEntry // Mask the password text
         />
 
-        <SubmitButton />
+        <NonGradientButton
+          label="Submit"
+          onPress={() => Alert.alert('Submit Button Pressed')}
+          height={42}
+          width={124}
+        />
 
         <TouchableOpacity onPress={() => router.push('/signup')}>
           <Text
