@@ -1,4 +1,14 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+
+
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  Image,
+  ActivityIndicator,
+} from 'react-native';
+
 // import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { useRouter } from 'expo-router';
@@ -32,13 +42,14 @@ export default function About() {
         empower you with the knowledge and confidence you need to step into any
         barbershop with ease.
       </Text>
+
       <NonGradientButton
         label="Start"
         height={42}
         width={124}
         onPress={() => router.push('/login')}
       />
-    </View>
+
   );
 }
 
