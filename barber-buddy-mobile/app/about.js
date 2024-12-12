@@ -1,5 +1,3 @@
-
-
 import {
   View,
   Text,
@@ -49,7 +47,7 @@ export default function About() {
         width={124}
         onPress={() => router.push('/login')}
       />
-
+    </View>
   );
 }
 
