@@ -10,7 +10,6 @@ import {
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 import { useRouter } from 'expo-router';
-import NonGradientButton from '@/components/NonGradientButton';
 
 export default function Index() {
   const router = useRouter();
