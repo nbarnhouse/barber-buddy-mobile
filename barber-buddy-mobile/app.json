@@ -9,10 +9,8 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/scissor_image.png",
-      //"resizeMode": "contain",
-      "backgroundColor": "#0d2124",
-      "height": 30,
-      "width": 30
+      "resizeMode": "contain",
+      "backgroundColor": "#0d2124"
     },
     "ios": {
       "supportsTablet": true
