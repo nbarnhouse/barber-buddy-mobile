@@ -1,13 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  Image,
-  ActivityIndicator,
-} from 'react-native';
-
-// import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 import { useRouter } from 'expo-router';
 import { useFonts } from 'expo-font';
