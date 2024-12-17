@@ -1,15 +1,25 @@
-import { View, StyleSheet, Text, Image, Alert } from 'react-native';
+import { View, StyleSheet, Text, Image, Alert, Dimensions } from 'react-native';
+import { useFonts } from 'expo-font';
 import scissorImage from '../assets/images/scissor_image.png';
-import statusBar from '../assets/images/statusBar.png';
+import statusBar from '../assets/images/status_bars/statusBarDone.png';
 import NonGradientButton from '../components/NonGradientButton';
 import globalStyles from '../components/globalStyles';
 
+const { width, height } = Dimensions.get('window');
+
 export default function Done() {
+  const [fontsLoaded] = useFonts({
+    interFont: require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
+  });
+
   return (
     <View style={styles.container}>
       <Image source={statusBar} />
-      <Image source={scissorImage} style={styles.image} />
-      <Text style={[globalStyles.title, { color: 'white' }]}>You’re done!</Text>
+      <Image
+        source={scissorImage}
+        style={[styles.image, { resizeMode: 'contain' }]}
+      />
+      <Text style={globalStyles.title}>You’re done!</Text>
       <NonGradientButton
         label="Suggested Cuts"
         height={42}
@@ -29,7 +39,8 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    height: 384.18,
-    width: 248.58,
+    height: height * 0.4, // 40% of screen height
+    width: width * 0.6, // 60% of screen width
+    resizeMode: 'contain',
   },
 });
