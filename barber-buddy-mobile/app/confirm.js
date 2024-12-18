@@ -4,7 +4,6 @@ import globalStyles from '../components/globalStyles';
 export default function Confirm() {
   return (
     <View style={styles.container}>
-      <Text>Confirm Page</Text>
       <Text style={globalStyles.title}>Barber Buddy</Text>
       <Text style={[globalStyles.text, styles.confirm_text]}>
         Confirm via e-mail
