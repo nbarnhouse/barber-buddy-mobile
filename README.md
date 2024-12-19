@@ -22,9 +22,9 @@ Barber Buddy takes the stress out of your salon visit by providing personalized 
 - brew install watchman
 - npx expo-doctor
 - expo-font
-- @react-native-async-storage/async-storage
+- react-native-async-storage/async-storage
 - expo-linear-gradient
-- @react-native-picker/picker
+- react-native-picker/picker
 - react-native-screens
 - react-native-safe-area-context
 -
