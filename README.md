@@ -1,50 +1,60 @@
-# Welcome to your Expo app 👋
+# Barber Buddy (Mobile)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Description
 
-## Get started
+Barber Buddy takes the stress out of your salon visit by providing personalized suggestions based on your preferences, face shape, and the latest trends.
 
-1. Install dependencies
+### Prerequisites
 
-   ```bash
-   npm install
-   ```
+- [npm](https://www.npmjs.com)
+- [Expo Go](https://docs.expo.dev)
+- [Homebrew](https://brew.sh)
 
-2. Start the app
 
-   ```bash
-    npx expo start
-   ```
+## Installation (Development)
 
-In the output, you'll find options to open the app in a
+1. Install Expo Go on your mobile device.
+2. Run `npx expo start` in your terminal
+3. Open App in Expo Go App.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Options if not already installed
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- brew install node
+- brew install watchman
+- npx expo-doctor
+- expo-font
+- react-native-async-storage/async-storage
+- expo-linear-gradient
+- react-native-picker/picker
+- react-native-screens
+- react-native-safe-area-context
+- npm install react-native-vector-icons
 
-## Get a fresh project
+## File Structure
 
-When you're ready, run:
+- `app/` contains the visual and navigation app files
+- `assets/` contains app images, icons, and other media
+- `components/` contains reusable code snippets of common elements
+- `constants/` contains app-wide constants
+- `hooks/` contains custom React hooks to encapsulate reusable logic
+- `scripts/` contains utility scripts or helper functions
 
-```bash
-npm run reset-project
-```
+How does someone use this application? Tell a user story here.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+1. Imagine having a trusted companion by your side, providing expert guidance and advice on the perfect haircut for you. That's exactly what BarberBuddy offers. Our user-friendly mobile application is designed to empower you with the knowledge and confidence you need to step into any barbershop with ease.
+2. We do this through the use of AI and a large library database including details about how to accomplish, maintain and style each haircut.
+3. Current state it is intended for males with questions about hair, but the team is very open to the idea of expanding it to anyone.
 
-## Learn more
+## Built With
 
-To learn more about developing your project with Expo, look at the following resources:
+- React Native
+- HomeBrew
+- Expo Go
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Acknowledgement
 
-## Join the community
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
 
-Join our community of developers creating universal apps.
+## Support
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If you have suggestions or issues, please email me at [nicolebarnhouse@gmail.com](mailto:nicolebarnhouse@gmail.com).
