@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Text,
+  View,
   TextInput,
   Image,
   StyleSheet,
@@ -11,6 +12,7 @@ import {
   Platform,
   Pressable,
   Keyboard,
+  Alert
 } from 'react-native';
 import { useState } from 'react';
 import { useFonts } from 'expo-font';
@@ -56,6 +58,17 @@ const SignIn = () => {
 
         <Text style={[styles.font, globalStyles.title]}>Barber Buddy</Text>
 
+        <TouchableOpacity onPress={() => router.push('/new-user')}>
+          <Text
+            style={
+              styles.font
+      
+            }
+          >
+            Create an Account
+          </Text>
+        </TouchableOpacity>
+
         <TextInput
           style={styles.input}
           onChangeText={handleTextInput}
@@ -69,6 +82,13 @@ const SignIn = () => {
           placeholder={'Password'}
           secureTextEntry // Mask the password text
         />
+<View style={{ flexDirection: 'row', padding: 10 , backgroundColor: 'red'}}>
+        <NonGradientButton style={{color: '#b97f60'}} 
+          label="Back"
+          onPress={() => router.back()}
+          height={42}
+          width={124}
+        />
 
         <NonGradientButton
           label="Submit"
@@ -76,19 +96,8 @@ const SignIn = () => {
           height={42}
           width={124}
         />
-
-        <TouchableOpacity onPress={() => router.push('/signup')}>
-          <Text
-            style={[
-              styles.font,
-              {
-                textDecorationLine: 'underline',
-              },
-            ]}
-          >
-            New User
-          </Text>
-        </TouchableOpacity>
+</View>
+        
       </SafeAreaView>
  
 
