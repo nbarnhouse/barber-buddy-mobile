@@ -1,15 +1,20 @@
-import { Text, View, StyleSheet, Image } from "react-native";
-import { useRouter } from 'expo-router';
+import { Text, StyleSheet, Image, SafeAreaView } from "react-native";
+import { useRouter } from "expo-router";
+import { useFonts } from "expo-font";
 
-import globalStyles from './globalStyles.js';
-import NonGradientButton from '../components/buttons/NonGradientButton.js';
+import globalStyles from "../styles/globalStyles";
+import NonGradientButton from "../components/NonGradientButton";
 
 export default function Index() {
-const router = useRouter();
-const logoImg = require('../assets/images/barber_logo.png');
+  const router = useRouter();
+  const logoImg = require("../assets/images/barber_logo.png");
+
+  const [fontsLoaded] = useFonts({
+    interFont: require("../assets/fonts/Inter-VariableFont_opsz,wght.ttf"),
+  });
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image source={logoImg} style={styles.logo}></Image>
       <Text style={globalStyles.title}>Barber Buddy</Text>
       <Text style={[globalStyles.text, styles.text]}>
@@ -30,27 +35,26 @@ const logoImg = require('../assets/images/barber_logo.png');
         label="Start"
         height={42}
         width={124}
-         onPress={() => router.push('/sign-in')}
+        onPress={() => router.push("/login")}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0c2025',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#0c2025",
+    justifyContent: "center",
+    alignItems: "center",
   },
   logo: {
     height: 140,
     width: 140,
   },
   text: {
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start",
     padding: 20,
     fontSize: 18,
   },
 });
-
