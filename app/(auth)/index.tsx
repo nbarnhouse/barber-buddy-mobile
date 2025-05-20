@@ -2,15 +2,15 @@ import { Text, StyleSheet, Image, SafeAreaView } from "react-native";
 import { useRouter } from "expo-router";
 import { useFonts } from "expo-font";
 
-import globalStyles from "../styles/globalStyles";
-import NonGradientButton from "../components/NonGradientButton";
+import globalStyles from "../../styles/globalStyles";
+import NonGradientButton from "../../components/NonGradientButton";
 
 export default function Index() {
   const router = useRouter();
-  const logoImg = require("../assets/images/barber_logo.png");
+  const logoImg = require("../../assets/images/barber_logo.png");
 
   const [fontsLoaded] = useFonts({
-    interFont: require("../assets/fonts/Inter-VariableFont_opsz,wght.ttf"),
+    interFont: require("../../assets/fonts/Inter-VariableFont_opsz,wght.ttf"),
   });
 
   return (
@@ -35,7 +35,7 @@ export default function Index() {
         label="Start"
         height={42}
         width={124}
-        onPress={() => router.push("/login")}
+        onPress={() => router.push("/register")}
       />
     </SafeAreaView>
   );
