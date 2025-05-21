@@ -36,11 +36,11 @@ const SignIn = () => {
     return <ActivityIndicator size="large" color="#f5722a" />;
   }
 
-  const handleTextInput = (input) => {
+  const handleTextInput = (input: string) => {
     onEnterUsername(input);
   };
 
-  const handlePassInput = (input) => {
+  const handlePassInput = (input: string) => {
     onEnterPassword(input);
   };
 
@@ -75,7 +75,7 @@ const SignIn = () => {
         style={{ flexDirection: "row", padding: 10, backgroundColor: "red" }}
       >
         <NonGradientButton
-          style={{ color: "#b97f60" }}
+          //style={{ color: "#b97f60" }}
           label="Back"
           onPress={() => router.back()}
           height={42}

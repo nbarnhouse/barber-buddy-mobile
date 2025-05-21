@@ -1,5 +1,5 @@
-import { View, Text, Image, StyleSheet } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import { View, Text, Image, StyleSheet, SafeAreaView } from "react-native";
+import Feather from "@expo/vector-icons/Feather";
 
 export default function HomeScreen() {
   const userLogo = require("../../assets/images/logo_image.jpeg");
@@ -10,20 +10,23 @@ export default function HomeScreen() {
   const trendsImage = require("../../assets/images/trends_image.jpeg");
 
   return (
-    <View style={styles.container}>
-      <View style={styles.screen_banner}>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.screen_header}>
         <Image source={userLogo} style={styles.user_logo} />
-        <AntDesign name="home" size={24} color="black" />{" "}
-      </View>
-      <View>
-        <Image source={profileImage} style={styles.image_size} />
+        <Feather name="menu" size={36} color="black" />{" "}
         {/* <MenuTitle style={{ flex: 1, justifyContent: 'flex-end' }} /> */}
       </View>
-      <Image source={savedImage} style={styles.image_size} />
-      <Image source={topicsImage} style={styles.image_size} />
-      <Image source={trendsImage} style={styles.image_size} />
-      <Image source={homeButton} style={{ width: 88, height: 88 }} />
-    </View>
+
+      <View style={styles.screen_body}>
+        <Image source={profileImage} style={styles.image_size} />
+        <Image source={savedImage} style={styles.image_size} />
+        <Image source={topicsImage} style={styles.image_size} />
+        <Image source={trendsImage} style={styles.image_size} />
+      </View>
+      {/* <View>
+        <Image source={homeButton} style={{ width: 82, height: 82 }} />
+      </View> */}
+    </SafeAreaView>
   );
 }
 
@@ -31,27 +34,34 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#0d2124",
-    justifyContent: "space-around",
-    alignItems: "center",
+    justifyContent: "space-evenly",
+    padding: 10,
   },
 
   user_logo: {
-    height: 82,
-    width: 82,
+    height: 60,
+    width: 60,
     borderRadius: 40,
     margin: 5,
   },
 
-  screen_banner: {
-    height: 90,
-    width: "100%",
-    backgroundColor: "#FFFFFF",
+  screen_header: {
+    backgroundColor: "#ffffff",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+
+  screen_body: {
+    //justifyContent: "center",
+    backgroundColor: "red",
   },
 
   image_size: {
-    height: 158,
-    width: 368,
-    resizeMode: "cover",
+    height: "18%",
+    width: "90%",
+    // resizeMode: "cover",
     borderRadius: 10,
+    margin: 10,
   },
 });
