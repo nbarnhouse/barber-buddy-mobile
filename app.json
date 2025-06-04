@@ -4,24 +4,30 @@
     "slug": "barber-buddy-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icons/home_icon.png",
+    "icon": "./assets/images/barber_logo.png",
     "scheme": "barberbuddymobile",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+
+    "splash": {
+      "image": "./assets/images/scissor_image.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0d2124"
+    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icons/home_icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/scissor_image.png",
+        "backgroundColor": "#0d2124"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.ico"
     },
     "plugins": [
       "expo-router",

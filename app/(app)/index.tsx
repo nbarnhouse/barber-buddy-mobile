@@ -1,6 +1,13 @@
-import { View, Text, Image, StyleSheet, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 import Feather from "@expo/vector-icons/Feather";
-
+//import AppHeaderBar from "../../assets/svg/AppHeaderBar";
 export default function HomeScreen() {
   const userLogo = require("../../assets/images/logo_image.jpeg");
   const homeButton = require("../../assets/icons/home_icon.png");
@@ -12,9 +19,16 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.screen_header}>
-        <Image source={userLogo} style={styles.user_logo} />
-        <Feather name="menu" size={36} color="black" />{" "}
-        {/* <MenuTitle style={{ flex: 1, justifyContent: 'flex-end' }} /> */}
+        <TouchableOpacity
+          style={{
+            backgroundColor: "#0d2124",
+          }}
+        >
+          <Image source={userLogo} style={styles.user_logo} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Feather name="menu" size={36} color="black" />
+        </TouchableOpacity>
       </View>
 
       <View style={styles.screen_body}>
@@ -22,10 +36,9 @@ export default function HomeScreen() {
         <Image source={savedImage} style={styles.image_size} />
         <Image source={topicsImage} style={styles.image_size} />
         <Image source={trendsImage} style={styles.image_size} />
-      </View>
-      {/* <View>
+
         <Image source={homeButton} style={{ width: 82, height: 82 }} />
-      </View> */}
+      </View>
     </SafeAreaView>
   );
 }
@@ -41,27 +54,51 @@ const styles = StyleSheet.create({
   user_logo: {
     height: 60,
     width: 60,
-    borderRadius: 40,
     margin: 5,
+    marginRight: 15,
+    overflow: "hidden",
+    borderRadius: 30,
   },
 
   screen_header: {
-    backgroundColor: "#ffffff",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    backgroundColor: "white",
   },
 
   screen_body: {
-    //justifyContent: "center",
-    backgroundColor: "red",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   image_size: {
     height: "18%",
     width: "90%",
-    // resizeMode: "cover",
     borderRadius: 10,
     margin: 10,
+    resizeMode: "cover",
   },
 });
+
+//       <View style={styles.screen_header}>
+//         <Feather name="menu" size={36} color="black" />{" "}
+//         {/* <MenuTitle style={{ flex: 1, justifyContent: 'flex-end' }} /> */}
+//       </View>
+//
+//       <View style={styles.screen_body}>
+//         <TouchableOpacity>
+//           <Text>
+//             <Image source={profileImage} style={styles.image_size} />
+//           </Text>
+//         </TouchableOpacity>
+//       </View>
+//       <View>
+//         <Text>
+//           <Image source={savedImage} style={styles.image_size} />
+//           <Image source={topicsImage} style={styles.image_size} />
+//           <Image source={trendsImage} style={styles.image_size} />
+//
+//           <Image source={homeButton} style={{ width: 82, height: 82 }} />
+//         </Text>
+//       </View>
