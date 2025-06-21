@@ -15,21 +15,21 @@ export default function NonGradientButton({
   width,
 }: NonGradientButtonProps) {
   return (
-    <View style={styles.container}>
-      <Pressable style={[styles.shape, { height, width }]} onPress={onPress}>
-        <Text style={globalStyles.text}>{label}</Text>
-      </Pressable>
-    </View>
+    <Pressable style={[styles.shape, { height, width }]} onPress={onPress}>
+      <Text style={styles.text}>{label}</Text>
+    </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#F77127",
-    borderRadius: 10,
-  },
   shape: {
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#FC7B33",
+    borderRadius: 10,
+  },
+  text: {
+    color: "#FFFFFF",
+    fontSize: 20.8,
   },
 });
