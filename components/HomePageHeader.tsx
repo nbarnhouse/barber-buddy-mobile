@@ -18,7 +18,7 @@ const HomePageHeader = () => {
         <Image source={userLogo} style={styles.user_logo} />
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => console.log("Menu icon pressed")}>
         <Feather name="menu" size={36} color="black" />
       </TouchableOpacity>
     </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: "100%",
     height: 80,
-    marginRight: -10,
+    paddingRight: 10,
   },
   user_logo_button: {
     //backgroundColor: "#4CAF50", // green background for testing

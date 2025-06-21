@@ -44,7 +44,7 @@ export default function UpdateProfile() {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={globalStyles.container}>
             <Image source={logoImg} style={styles.logo} />
-            <Text style={{ color: "white " }}>Update Profile</Text>
+            <Text style={{ color: "white" }}>Update Profile</Text>
 
             <TextInput
               style={styles.input}
